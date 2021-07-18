@@ -20,7 +20,6 @@
 #'
 #' @importFrom arrow
 #'             S3FileSystem
-#'             open_dataset
 #'
 #' @importFrom checkmate
 #'             assert_class
