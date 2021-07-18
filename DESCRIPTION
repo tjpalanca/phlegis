@@ -19,4 +19,5 @@ Imports:
     arrow,
     aws.s3,
     checkmate,
+    logger,
     snakecase

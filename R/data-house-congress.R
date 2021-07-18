@@ -2,7 +2,7 @@
 #' @export
 data_house_congress <- function() {
 
-  dataset_open(data_house_congress_bucket())
+  dataset_open(data_bucket("house/congress"))
 
 }
 
@@ -16,10 +16,6 @@ data_house_congress_load <- function() {
       congress_id = html_text(.),
       form_value  = html_attr(., "value")
     )) %>%
-    dataset_write(data_house_congress_bucket())
+    dataset_write(data_bucket("house/congress"))
 
-}
-
-data_house_congress_bucket <- function() {
-  data_bucket("congress")
 }

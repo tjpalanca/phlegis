@@ -4,19 +4,31 @@
 #' @import glue
 #'         tibble
 #'         magrittr
+#'         logger
+#'
+#' @importFrom rvest
+#'             session session_submit
+#'             html_node html_nodes
+#'             html_form html_form_set
+#'             html_text html_attr
+#'             url_absolute
 #'
 #' @importFrom dplyr
 #'             mutate
 #'             filter
+#'             select
 #'             pull
+#'             collect
+#'             group_by
+#'             bind_cols bind_rows
 #'
 #' @importFrom purrr
-#'             map
-#'             map_dfr
-#'             walk
+#'             map map2 map_dfr
+#'             walk walk2
 #'
 #' @importFrom stringr
 #'             str_remove
+#'             str_detect
 #'
 #' @importFrom arrow
 #'             S3FileSystem
@@ -34,3 +46,10 @@
 ## usethis namespace: start
 ## usethis namespace: end
 NULL
+
+.onLoad <- function(...) {
+
+  # Set logging colors
+  logger::log_layout(logger::layout_glue_colors)
+
+}
