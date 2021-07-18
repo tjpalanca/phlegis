@@ -1,16 +1,21 @@
 #' @title
-#' Write a dataset to storage
+#' Read and Write Datasets to object storage
 #'
 #' @description
 #' Write a dataset using the [`arrow::write_dataset`] and then set the access
-#' policy of the dataset (`public-read` by default).
+#' policy of the dataset (`public-read` by default). Read the dataset using
+#' [`arrow::open_dataset`].
 #'
-#' @param dataset,path,... see [`arrow::write_dataset`]
+#' @param dataset,path,... see [`arrow::write_dataset`] or
+#'                         [`arrow::open_dataset`]
 #' @param policy either `public-read` (default) or `private`.
 #' @param creds  storage credentials
 #'
-#' @export
+#' @name dataset
+NULL
 
+#' @rdname dataset
+#' @export
 dataset_write <- function(dataset,
                           path,
                           ...,
@@ -34,6 +39,16 @@ dataset_write <- function(dataset,
       creds  = creds
     )
   }
+
+  dataset_open(path)
+
+}
+
+#' @rdname dataset
+#' @export
+dataset_open <- function(...) {
+
+  arrow::open_dataset(...)
 
 }
 

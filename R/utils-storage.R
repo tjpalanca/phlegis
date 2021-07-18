@@ -38,7 +38,8 @@ storage_get_paths <- function(filesystem, path = "") {
   }
 }
 
-storage_bucket <- function(bucket = "phdwh", path = "phlegis",
+storage_bucket <- function(bucket,
+                           path,
                            creds = storage_credentials()) {
 
   assert_string(bucket)
@@ -63,7 +64,7 @@ storage_list <- function(path, creds = storage_credentials()) {
     prefix   = paths$prefix,
     creds    = creds,
   ) %>%
-    set_names(snakecase::to_snake_case)
+    set_names(snakecase::to_snake_case(names(.)))
 
 }
 
@@ -74,7 +75,7 @@ storage_set_policy <- function(path,
   assert_class(path, "FileSystem")
   assert_choice(policy, c("public-read", "private"))
 
-  paths <- storage_get_paths()
+  paths <- storage_get_paths(path)
 
   storage_list(path, creds) %>%
     # Remove directory keys
