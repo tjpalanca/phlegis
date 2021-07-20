@@ -8,16 +8,15 @@ data_house_republic_act <- function() {
 #' @rdname data
 data_house_republic_act_pipeline <- function(...) {
 
-  republic_acts.ses <-
-    session("https://congress.gov.ph/legisdocs/?v=ra")
+  session <- session("https://congress.gov.ph/legisdocs/?v=ra")
 
-  republic_acts.ses %>%
+  session %>%
     data_house_congress_extract() %>%
     filter(...) %>% {
       walk2(
         .$form_value, .$congress_id,
         function(form_value, congress_id) {
-          republic_acts.ses %>%
+          session %>%
             data_house_republic_act_submit(form_value) %>%
             data_house_republic_act_extract(congress_id) %>%
             data_house_republic_act_load()
