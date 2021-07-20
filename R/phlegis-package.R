@@ -6,6 +6,13 @@
 #'         magrittr
 #'         logger
 #'
+#' @importFrom progress
+#'             progress_bar
+#'
+#' @importFrom httr
+#'             POST
+#'             content
+#'
 #' @importFrom rvest
 #'             session session_submit
 #'             html_node html_nodes
