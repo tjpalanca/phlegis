@@ -9,7 +9,7 @@ data_house_congress <- function() {
 #' @rdname data
 data_house_congress_pipeline <- function() {
 
-  session("https://congress.gov.ph/legisdocs/?v=ra") %>%
+  scrape_session("https://congress.gov.ph/legisdocs/?v=ra") %>%
     data_house_congress_extract() %>%
     data_house_congress_load()
 

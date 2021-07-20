@@ -7,7 +7,7 @@ data_house_bill <- function() {
 
 data_house_bill_pipeline <- function(...) {
 
-  session <- session("https://congress.gov.ph/legisdocs/?v=bills")
+  session <- scrape_session("https://congress.gov.ph/legisdocs/?v=bills")
 
   session %>%
     data_house_congress_extract() %>%

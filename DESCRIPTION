@@ -19,6 +19,14 @@ Imports:
     arrow,
     aws.s3,
     checkmate,
+    dplyr,
+    glue,
+    httr,
     logger,
+    magrittr,
     progress,
-    snakecase
+    purrr,
+    rvest,
+    snakecase,
+    stringr,
+    tibble

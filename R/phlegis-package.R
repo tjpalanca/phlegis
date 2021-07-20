@@ -44,6 +44,7 @@
 #'             assert_class
 #'             assert_string
 #'             assert_choice
+#'             assert_true
 #'
 #' @keywords internal
 "_PACKAGE"
@@ -60,3 +61,7 @@ NULL
   logger::log_layout(logger::layout_glue_colors)
 
 }
+
+pkg_name <- "phlegis"
+
+pkg_user_agent <- "PH Legis Scraper https://github.com/tjpalanca/phlegis"

@@ -8,7 +8,7 @@ data_house_republic_act <- function() {
 #' @rdname data
 data_house_republic_act_pipeline <- function(...) {
 
-  session <- session("https://congress.gov.ph/legisdocs/?v=ra")
+  session <- scrape_session("https://congress.gov.ph/legisdocs/?v=ra")
 
   session %>%
     data_house_congress_extract() %>%
@@ -24,17 +24,17 @@ data_house_republic_act_pipeline <- function(...) {
       )
     }
 
-  data_house_republic_act()
-
 }
 
 data_house_republic_act_submit <- function(session, form_value) {
+
   session %>%
     session_submit(
       html_node(., ".form-inline.pull-right") %>%
         html_form() %>%
         html_form_set(congress = form_value)
     )
+
 }
 
 data_house_republic_act_extract <- function(session, congress_id) {
