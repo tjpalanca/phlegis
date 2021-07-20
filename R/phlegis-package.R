@@ -6,6 +6,8 @@
 #'         magrittr
 #'         logger
 #'
+#' @importFrom rlang %||%
+#'
 #' @importFrom tidyr
 #'             unnest
 #'             pivot_wider
@@ -33,9 +35,11 @@
 #'             collect
 #'             group_by
 #'             bind_cols bind_rows
+#'             across
+#'             arrange
 #'
 #' @importFrom purrr
-#'             map map2 map_dfr
+#'             map map2 map_dfr map_chr map_lgl
 #'             walk walk2
 #'
 #' @importFrom stringr

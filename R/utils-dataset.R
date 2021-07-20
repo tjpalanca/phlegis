@@ -40,7 +40,7 @@ dataset_write <- function(dataset,
     )
   }
 
-  dataset_open(path)
+  return(dataset)
 
 }
 
