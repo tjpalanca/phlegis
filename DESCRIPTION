@@ -29,4 +29,5 @@ Imports:
     rvest,
     snakecase,
     stringr,
-    tibble
+    tibble,
+    tidyr

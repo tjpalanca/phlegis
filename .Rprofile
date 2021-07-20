@@ -5,7 +5,7 @@ if (file.exists("~/.Rprofile")) source("~/.Rprofile", chdir = TRUE)
 if (interactive()) {
   r <- function(reset = FALSE, ...) {
     if (reset) {
-      rm(list = ls(globalenv()), envir = )
+      rm(list = ls(globalenv()), envir = globalenv())
       source(".Rprofile")
     }
     if (rstudioapi::isAvailable()) {

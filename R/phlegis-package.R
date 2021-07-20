@@ -6,6 +6,10 @@
 #'         magrittr
 #'         logger
 #'
+#' @importFrom tidyr
+#'             unnest
+#'             pivot_wider
+#'
 #' @importFrom progress
 #'             progress_bar
 #'
@@ -14,11 +18,12 @@
 #'             content
 #'
 #' @importFrom rvest
-#'             session session_submit
+#'             session_submit
 #'             html_node html_nodes
 #'             html_form html_form_set
 #'             html_text html_attr
 #'             url_absolute
+#'             html_table
 #'
 #' @importFrom dplyr
 #'             mutate
